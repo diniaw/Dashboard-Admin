@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Daftar Reservasi Hotel{% endblock %}
+
+{% block main %}
+<div class="content-wrapper">
+    <div class="col-lg-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Daftar Reservasi Hotel</h4>
+                
+                <!-- Tombol Tambah Reservasi -->
+                <div class="d-flex justify-content-end mb-3">
+                    <a href="{{ url_for('tambah_buku') }}" class="btn btn-primary">
+                        Tambah Reservasi
+                    </a>
+                </div>
+                
+                <!-- Tabel Reservasi -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th>ID Reservasi</th>
+                                <th>Nama Tamu</th>
+                                <th>Tanggal Check-In</th>
+                                <th>Tanggal Check-Out</th>
+                                <th>Jenis Kamar</th>
+                                <th>Harga Per Malam</th>
+                                <th>Status Pembayaran</th>
+                                <th>Kontak Tamu</th>
+                                <th>Email Tamu</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for reservasi in hotel %}
+                            <tr>
+                                <td>{{ reservasi.ID_reservasi }}</td>
+                                <td>{{ reservasi.nama_tamu }}</td>
+                                <td>{{ reservasi.tanggal_checkin }}</td>
+                                <td>{{ reservasi.tanggal_checkout }}</td>
+                                <td>{{ reservasi.jenis_kamar }}</td>
+                                <td>{{ reservasi.harga_per_malam }}</td>
+                                <td>{{ reservasi.status_pembayaran }}</td>
+                                <td>{{ reservasi.kontak_tamu }}</td>
+                                <td>{{ reservasi.email_tamu }}</td>
+                                <td>
+                                    <a href="{{ url_for('edit_buku', book_id=reservasi.ID_reservasi) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ url_for('delete_buku', book_id=reservasi.ID_reservasi) }}" 
+                                       class="btn btn-danger btn-sm" 
+                                       onclick="return confirm('Apakah Anda yakin ingin menghapus reservasi ini?')">
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

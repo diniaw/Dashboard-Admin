@@ -1,0 +1,38 @@
+.content-wrapper {
+    padding: 20px;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-responsive {
+    overflow-x: auto; /* Tambahkan scroll horizontal jika tabel terlalu lebar */
+    margin-top: 20px;
+  }
+  
+  .table {
+    margin: 0 auto; /* Pusatkan tabel */
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table-bordered th, .table-bordered td {
+    border: 1px solid #ddd;
+  }
+  
+  .btn-sm {
+    font-size: 0.875rem;
+  }
+  

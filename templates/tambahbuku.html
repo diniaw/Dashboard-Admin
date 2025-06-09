@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Tambah Reservasi{% endblock %}
+
+{% block main %}
+<div class="content-wrapper">
+    <div class="col-lg-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Tambah Reservasi</h4>
+                <form method="POST" action="{{ url_for('tambah_buku') }}">
+                  <div class="form-group mb-3">
+                    <label for="ID_reservasi">ID Reservasi</label>
+                    <input type="number" id="ID_reservasi" name="ID_reservasi" class="form-control" required>
+                </div>
+                    <div class="form-group mb-3">
+                        <label for="nama_tamu">Nama Tamu</label>
+                        <input type="text" id="nama_tamu" name="nama_tamu" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="tanggal_checkin">Tanggal Check-In</label>
+                        <input type="date" id="tanggal_checkin" name="tanggal_checkin" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="tanggal_checkout">Tanggal Check-Out</label>
+                        <input type="date" id="tanggal_checkout" name="tanggal_checkout" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="jenis_kamar">Jenis Kamar</label>
+                        <select id="jenis_kamar" name="jenis_kamar" class="form-control" required>
+                            <option value="Single">Single</option>
+                            <option value="Double">Double</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="harga_per_malam">Harga Per Malam</label>
+                        <input type="number" id="harga_per_malam" name="harga_per_malam" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="status_pembayaran">Status Pembayaran</label>
+                        <select id="status_pembayaran" name="status_pembayaran" class="form-control" required>
+                            <option value="lunas">Lunas</option>
+                            <option value="pending">Pending</option>
+                            <option value="cancel">Cancel</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="kontak_tamu">Kontak Tamu</label>
+                        <input type="text" id="kontak_tamu" name="kontak_tamu" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email_tamu">Email Tamu</label>
+                        <input type="text" id="email_tamu" name="email_tamu" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
